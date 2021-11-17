@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "MY Extension",
+    "version": "0.2",
+    "background": {
+        "scripts": ["background.js"]
+      },
+      "chrome_url_overrides" : {
+        "newtab": "my-new-tab.html"
+      },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": [ "speechRecognize.js", "SpeechSynthesis.js", "functions.js","contentScript.js"]
+        }
+      ],
+    "permissions": [ "tabs" , "bookmarks","cookies", "history", "webNavigation", "identity", "<all_urls>"],
+    "browser_action": {
+      "default_title": "Chrome Extension",
+      "default_popup" : "popup.html"
+    },
+    "web_accessible_resources": ["popup.js", "beep.mp3"],
+     "content_security_policy": "script-src 'self' 'unsafe-eval' https://apis.google.com/; object-src 'self'"
+  }
