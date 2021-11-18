@@ -5,7 +5,7 @@ function doWork() {
     recog.start(function (transcript) {
         if (transcript != "") {
             console.log(transcript)
-            if (transcript.includes("Mohit")) {
+            if (transcript.includes("Devi")) {
                 var ttsRecorder = new SpeechSynthesisRecorder(text = "Yes what can I do?");
                 ttsRecorder.start()
                 return setTimeout(doWork, 1500);
